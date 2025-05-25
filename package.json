@@ -1,0 +1,21 @@
+{
+  "name": "scripterio-example",
+  "version": "1.0.0",
+  "description": "Various examples of how to perform unit, API, and UI testing using ScripterI/O.",
+  "type": "module",
+  "scripts": {
+    "test": "npx scripterio --folder=tests"
+  },
+  "keywords": [
+    "scripterio",
+    "unit",
+    "api",
+    "ui"
+  ],
+  "author": "Vadym Nastoiashchyi",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.41.0",
+    "scripterio": "^1.0.5"
+  }
+}
