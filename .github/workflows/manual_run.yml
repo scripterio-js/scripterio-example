@@ -1,8 +1,7 @@
 name: Manual run
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    
 jobs:
   real-test-js-run:
     runs-on: ubuntu-latest
