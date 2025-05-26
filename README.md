@@ -5,6 +5,7 @@ This repository provides simple examples of how to perform unit and UI testing u
 ## Features
 
 - **Unit tests**: Demonstrates various assertions and async testing with ScripterI/O.
+- **API tests**: Demonstrates how to perform API tests with ScripterI/O.
 - **UI tests**: Shows how to use Playwright with ScripterI/O for browser automation.
 
 ## Getting Started
@@ -45,5 +46,6 @@ npx scripterio --folder=tests
 
 ## Project Structure
 
+- `tests/api_tests.js` – API test examples
 - `tests/unit_tests.js` – Unit test examples
 - `tests/ui_tests.js` – UI test examples using Playwright
