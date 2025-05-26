@@ -36,7 +36,7 @@ This repository provides simple examples of how to perform unit and UI testing u
 To run all tests:
 
 ```sh
-npm test
+npm run test
 ```
 or:
 
