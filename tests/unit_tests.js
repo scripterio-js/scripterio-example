@@ -1,80 +1,56 @@
 import { describe, test, expect } from "scripterio";
+import { calculator } from "../src/calculator.js";
 
-describe("Unit tests:", () => {
-  test("Usage toBeDefined()", () => {
-    const number = 1;
-    expect(number).toBeDefined();
+describe("Unit tests", () => {
+  describe("Addition tests", () => {
+    test("add() should correctly add two positive numbers", () => {
+      expect(calculator.add(2, 2)).toBeEqual(4);
+      expect(calculator.add(5, 3)).toBeEqual(8);
+    });
+
+    test("add() should handle negative numbers", () => {
+      expect(calculator.add(-2, 2)).toBeEqual(0);
+      expect(calculator.add(-5, -3)).toBeEqual(-8);
+    });
   });
 
-  test("Usage toHaveLength()", () => {
-    const arr = [1, 2, 3];
-    expect(arr).toHaveLength(3);
+  describe("Subtraction tests", () => {
+    test("subtract() should correctly subtract two positive numbers", () => {
+      expect(calculator.subtract(5, 3)).toBeEqual(2);
+      expect(calculator.subtract(10, 5)).toBeEqual(5);
+    });
+
+    test("subtract() should handle negative numbers", () => {
+      expect(calculator.subtract(-2, 3)).toBeEqual(-5);
+      expect(calculator.subtract(-5, -3)).toBeEqual(-2);
+    });
   });
 
-  test("Usage toBeFalsy()", () => {
-    const flag = false;
-    expect(flag).toBeFalsy();
+  describe(" Multiplication tests", () => {
+    test("multiply() should correctly multiply two positive numbers", () => {
+      expect(calculator.multiply(2, 3)).toBeEqual(6);
+      expect(calculator.multiply(4, 5)).toBeEqual(20);
+    });
+
+    test("multiply() should handle negative numbers", () => {
+      expect(calculator.multiply(-2, 3)).toBeEqual(-6);
+      expect(calculator.multiply(-2, -3)).toBeEqual(6);
+    });
+    test("multiply() should handle zero", () => {
+      expect(calculator.multiply(5, 0)).toBeEqual(0);
+      expect(calculator.multiply(0, 5)).toBeEqual(0);
+    });
   });
 
-  test("Usage toBeTruthy()", () => {
-    const flag = true;
-    expect(flag).toBeTruthy();
-  });
+  describe(" Division tests", () => {
+    test("divide() should correctly divide two positive numbers", () => {
+      expect(calculator.divide(6, 2)).toBeEqual(3);
+      expect(calculator.divide(15, 3)).toBeEqual(5);
+    });
 
-  test("Usage toEqual()", () => {
-    expect(1).toBeEqual(1);
-    expect("test").toBeEqual("test");
-    expect(true).toBeEqual(true);
-    expect(false).toBeEqual(false);
-  });
-
-  test("Usage notToEqual()", () => {
-    expect(2).toBeNotEqual(1);
-    expect("best").toBeNotEqual("test");
-    expect(false).toBeNotEqual(true);
-    expect({}).toBeNotEqual({});
-    expect([]).toBeNotEqual([]);
-  });
-
-  test("Wait 1 sec and check (async)", { timeout: 2000 }, async () => {
-    const number = await new Promise((resolve) =>
-      setTimeout(() => resolve(1), 1_000)
-    );
-    expect(number).toBeDefined();
-  });
-
-  test("Usage toBeNull()", () => {
-    expect(null).toBeNull();
-  });
-
-  test("Usage notToBeNull()", () => {
-    expect(1).toBeNotNull();
-  });
-
-  test("Usage toBeUndefined()", () => {
-    expect(undefined).toBeUndefined();
-  });
-
-  test("Usage toBeGreaterThan()", () => {
-    expect(5).toBeGreaterThan(4);
-  });
-
-  test("Usage toBeLessThan()", () => {
-    expect(3).toBeLessThan(4);
-  });
-
-  test("Usage toBeNaN()", () => {
-    expect("10F").toBeNaN();
-  });
-
-  test("Usage toContain()", () => {
-    const arr = ["real", "test"];
-    expect(arr).toContain("test");
-    expect(arr[0]).toContain("al");
-  });
-
-  test("Usage toMatch()", () => {
-    expect("test").toMatch("test");
-    expect("test").toMatch(/test/i);
+    test("divide() should handle negative numbers", () => {
+      expect(calculator.divide(-6, 2)).toBeEqual(-3);
+      expect(calculator.divide(-6, -2)).toBeEqual(3);
+    });
   });
 });
