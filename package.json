@@ -15,7 +15,7 @@
   "author": "Vadym Nastoiashchyi",
   "license": "ISC",
   "dependencies": {
-    "playwright": "^1.41.0",
-    "scripterio": "^1.9.1"
+    "playwright": "^1.53.0",
+    "scripterio": "^1.10.0"
   }
 }
